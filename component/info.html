@@ -1,0 +1,146 @@
+<div class="info-basic-content">
+    <table class="basic-table" cellpadding="0">
+        <tr>
+          <th>見積作成者</th>
+          <td colspan="4">
+            <input type="text" name="employeeCode" class="w15">
+            <input type="text" name="employeeName" class="w35">
+          </td>
+        </tr>
+        <tr>
+          <th colspan="5" class="long-th">
+            取引先情報
+          </th>
+        </tr>
+        <tr>
+          <th>取引先コード</th>
+          <td colspan="4">
+            <input type="text" name="code" id="code" />
+          </td>
+        </tr>
+        <tr>
+          <th>取引先名</th>
+          <td colspan="4">
+            <input type="text" name="customer" class="full" id="customer" />
+          </td>
+        </tr>
+        <tr>
+          <th>TEL</th>
+          <td>
+            <input type="tel" name="tel" class="full" id="tel" />
+          </td>
+          <th>FAX</th>
+          <td colspan="2">
+            <input type="text" name="fax" class="full" id="fax" />
+          </td>
+        </tr>
+        <tr>
+          <th>担当部署/担当者</th>
+          <td colspan="4">
+            担当部署：
+            <input type="text" name="personnelDep" class="w30" id="personnelDep" />　
+            担当者：
+            <input type="text" name="personnel" class="w30" id="personnel" />
+          </td>
+        </tr>
+        <tr>
+          <th rowspan="2">住所</th>
+          <td colspan="4">
+            郵便番号：
+            <input type="text" name="zip01" id="zipaddr" size="10" maxlength="8" onKeyUp="AjaxZip3.zip2addr(this,'','pref01','addr01');">
+            都道府県：
+            <input type="text" name="pref01" id="prefaddr" size="20">
+          </td>
+        </tr>
+        <tr>
+          <td colspan="4">
+            <input type="text" class="full" name="addr01" id="address" size="60">
+          </td>
+        </tr>
+        <tr>
+          <th>支払条件</th>
+          <td colspan="4">
+            <input type="text" name="payment-condition" class="half" id="">
+          </td>
+        </tr>
+        <tr>
+          <th>販売区分</th>
+          <td colspan="4">
+            <label><input type="radio" name="sell-category" value="direct">直販</label>
+            <label><input type="radio" name="sell-category" value="agency" checked>代理店販売</label>
+          </td>
+        </tr>
+        <tr>
+          <th>代理店名</th>
+          <td colspan="4">
+            <input type="text" name="agency" class="full" id="agency" />
+          </td>
+        </tr>
+        <tr>
+          <th>納入先名</th>
+          <td colspan="4">
+            <input type="text" class="half" id="destName">
+          </td>
+        </tr>
+        <tr>
+          <th rowspan="2">納入先住所</th>
+          <td colspan="4">
+            郵便番号：
+            <input type="text" name="zip02" id="zipdest" size="10" maxlength="8" onKeyUp="AjaxZip3.zip2addr(this,'','pref02','addr02');">
+            都道府県：
+            <input type="text" name="pref02" id="prefdest" size="20">
+          </td>
+        </tr>
+        <tr>
+          <td colspan="4">
+            <input type="text" class="full" name="addr02" id="destination" size="60">
+          </td>
+        </tr>
+        <tr>
+          <th colspan="5" class="long-th">法定福利費</th>
+        </tr>
+        <tr>
+          <th>建設見積</th>
+          <td>
+            <label>
+              <input type="radio" name="relation" id="relate" value="relate"/>関わる
+            </label>
+            <label>
+              <input type="radio" name="relation" id="norelate" value="norelate" checked/>関わらない
+            </label>
+          </td>
+          <th>元請/下請</th>
+          <td colspan="2">
+            <label>
+                <input type="radio" name="kubun" id="prime" value="prime" disabled/>元請工事
+            </label>
+            <label>
+                <input type="radio" name="kubun" id="sub" value="sub" disabled/>下請工事
+            </label>
+          </td>
+        </tr>
+        <tr>
+          <th>公共/民間</th>
+          <td>
+            <label>
+                <input type="radio" name="public" id="public" value="public" disabled/>公共工事
+            </label>
+            <label>
+                <input type="radio" name="public" id="private" value="private" disabled/>民間発注工事
+            </label>
+          </td>
+          <th>新設/更新</th>
+          <td colspan="2">
+            <label>
+                <input type="radio" name="type" id="new" value="new" disabled>新設工事
+            </label>
+            <label>
+                <input type="radio" name="type" id="renew" value="renew" disabled>維持・修繕
+            </label>
+            <label>
+              <input type="radio" name="type" id="improve" value="improve" disabled>改善
+          </label>
+          </td>
+        </tr>
+    </table>
+</div>

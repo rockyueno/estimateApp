@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property='og:type' content='website'>
+    <meta property='og:title' content='見積作成アプリ'>
+    <meta property='og:url' content='#'>
+    <meta property='og:description' content='エンジニアろっきーのポートフォリオ　見積作成アプリ'>
+    <meta property="og:image" content="/img/thumb.png">
+    <meta name="description" content="エンジニアろっきーのポートフォリオ　見積作成アプリ" />
+    <title>見積作成アプリ</title>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="https://js.cybozu.com/jqgrid/v5.1.1/css/ui.jqgrid.css">
+    <link rel="stylesheet" href="css/common.css">
+</head>
+<body>
+    <div class="container">
+      <header>
+        <div class="header-include quote-header"></div>
+      </header>
+      <div class="scroll">
+        <div class="basic-wrapper">
+          <h2>【基本情報】</h2>
+          <table class="basic-table">
+            <tr>
+              <th>希望納期</th>
+              <td colspan="2">
+                <input type="text" id="desiredDeliveryDate" />まで
+              </td>
+              <th>予算</th>
+              <td><input type="text" name="budget" id="budget">円</td>
+            </tr>
+          </table>
+          <div class="info-basic"></div>
+          <table class="basic-table" cellpadding="0">
+            <tr>
+              <th colspan="5" class="long-th">工事情報</th>
+            </tr>
+            <tr>
+              <th>引合番号</th>
+              <td>
+                <input type="text" name="installCode" class="kari" id="installCode" />
+              </td>
+              <th>工事名称</th>
+              <td colspan="2">
+                <input type="text" name="installName" class="full" id="">
+              </td>
+            </tr>
+            <tr>
+              <th>台数</th>
+              <td>
+                <select name="machineAmount" id="machineAmount">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option></select
+                >台
+              </td>
+              <th>納入日</th>
+              <td colspan="2"><input type="text" id="deliveryDate" /></td>
+            </tr>
+            <tr>
+              <th>検収予定日</th>
+              <td><input type="text" id="checkDate" /></td>
+              <th>見積提出期限</th>
+              <td colspan="2"><input type="text" id="submitDate" /></td>
+            </tr>
+          </table>
+        </div>
+        <div class="product-wrapper">
+          <h2>【製品情報】</h2>
+          <table>
+            <tr>
+              <th>型式</th>
+              <td>
+                <input type="text" name="machineNm" class="half" id="machineNm">
+              </td>
+            </tr>
+            <tr>
+              <th rowspan="2">対象物</th>
+              <td>
+                製品名：<input type="text" name="name" id="name">
+                　材質：<input type="text" name="material" id="material">
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label><input type="radio" name="object" id="object">箱物</label>　
+                <label><input type="radio" name="object" id="object">異形</label>
+              </td>
+            </tr>
+            <tr>
+              <th rowspan="2">サイズ</th>
+              <td>
+                最大：縦<input type="text" name="maxvertical" class="medium" id="maxvertical">
+                mm × 横<input type="text" name="maxhorizontal" class="medium" id="maxhorizontal">
+                mm × 高さ<input type="text" name="maxheight" class="medium" id="maxheight">
+                mm × 重量<input type="text" name="maxweight" class="medium" id="maxweight">g
+              </td>
+            </tr>
+            <tr>
+              <td>
+                最小：縦<input type="text" name="minvertical" class="medium" id="minvertical">
+                mm × 横<input type="text" name="minhorizontal" class="medium" id="minhorizontal">
+                mm × 高さ<input type="text" name="minheight" class="medium" id="minheight">
+                mm × 重量<input type="text" name="minweight" class="medium" id="minweight">g
+              </td>
+            </tr>
+            <tr>
+              <th>仕上がり</th>
+              <td>
+                <label><input type="radio" name="focus" id="focus">見た目重視</label>　
+                <label><input type="radio" name="focus" id="focus">コスト重視</label>
+              </td>
+            </tr>
+            <tr>
+              <th>電源</th>
+              <td>
+                <label><input type="radio" name="power" value="solo">単相</label>
+                <label><input type="radio" name="power" value="multi">三相</label>
+              </td>
+            </tr>
+            <tr>
+              <th>その他客先仕様</th>
+              <td>
+                <label><input type="checkbox" name="noise"/>ノイズ対策</label>　
+                <label><input type="checkbox" name="oilSupply"/>集中給油</label>　
+                <label><input type="checkbox" name="otherSpec"/>その他</label>
+                <input type="text" name="otherSpecText" class="half" disabled>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="note-wrapper">
+          <table>
+            <tr>
+              <th class="long-th">備考</th>
+            </tr>
+            <tr>
+              <td>
+                <textarea name="note" id="note" cols="30" rows="10"></textarea>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <footer>
+        <div class="btns">
+          <div class="left-btns">
+            <input type="button" onclick="openAsDialog('dialog/toIndexDialog.html')" value="戻る">
+          </div>
+          <div class="right-btns">
+            <input type="button" onclick="location.href='#'" value="見積確認">
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/free-jqgrid@4.15.4/js/jquery.jqgrid.min.js"></script>
+    <script src="https://ajaxzip3.github.io/ajaxzip3.js" charset="UTF-8"></script>
+    <script src="https://rawgit.com/jquery/jquery-ui/master/ui/i18n/datepicker-ja.js"></script>
+    <script type="text/javascript" src="script/script.js"></script>
+    <script type="text/javascript" src="script/dialog.js"></script>
+</body>
+</html>
